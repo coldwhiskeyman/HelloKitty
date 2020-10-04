@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Kitty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href='{% static "css/styles.css" %}' rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-wrap">
+                <img src="{% static 'img/logo.jpg' %}" alt="logo" class="logo">
+                <h1 class="heading">Приют для животных "Hello Kitty"</h1>
+            </div>
+            <div class="nav-wrap">
+                <nav class="menu">
+                    <ul class="nav">
+                        <li class="nav-item"><a href="{% url 'get_pets' %}" class="nav-link">Список животных</a></li>
+                        <li class="nav-item"><a href="{% url 'add_pet' %}" class="nav-link">Добавить животное</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    {% if user.username %}
+                        <span class="greetings">Здравствуйте, {{ user.username }}!</span>
+                        <a href="{% url 'logout' %}">Выйти</a>
+                    {% else %}
+                        <a href="{% url 'register' %}" class="greetings">Зарегистрироваться</a>
+                        <a href="{% url 'login' %}">Войти</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <a href="{% url 'pet-list' %}">Получить API списка всех животных</a>
+        </div>
+    </footer>
+</body>
+</html>

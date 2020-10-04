@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="form-group">
+            {{ form.as_p }}
+        </div>
+		<input class="btn btn-primary" type="submit" value="Зарегистрироваться">
+	</form>
+{% endblock %}

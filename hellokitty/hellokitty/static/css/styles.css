@@ -1,0 +1,68 @@
+html, body {
+    background-color: pink;
+}
+
+header,
+footer {
+    background-color: white;
+}
+
+header {
+    min-height: 20vh;
+    padding: 15px;
+}
+
+main {
+    min-height: 70vh;
+}
+
+footer {
+    min-height: 10vh;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.logo-wrap,
+.nav-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.logo-wrap {
+    margin-bottom: 15px;
+}
+
+.nav-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.greetings {
+    margin-right: 20px;
+}
+
+.list-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 50%;
+}
+
+form {
+    margin-top: 30px;
+}
+
+.add-pet-form label {
+    display: none;
+}
+
+.add-pet-form .form-control {
+    margin: 10px 0;
+}

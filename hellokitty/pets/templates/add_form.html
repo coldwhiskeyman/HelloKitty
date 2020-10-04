@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <form class="add-pet-form" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form }}
+        </div>
+        <input class="btn btn-primary" type="submit" value="Добавить">
+    </form>
+{% endblock %}
